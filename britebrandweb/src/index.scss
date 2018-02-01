@@ -1,5 +1,15 @@
+@import './vars.scss';
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: $main-font;
+  background-color: $background-color;
+}
+
+/* Header */
+
+header {
+  height: 50px;
+  background-color: $britebrand-blue;
 }
