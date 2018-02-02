@@ -8,6 +8,7 @@ import {
 import Home from './components/scenes/Home';
 
 class App extends Component {
+
   render() {
     return (
       <div>

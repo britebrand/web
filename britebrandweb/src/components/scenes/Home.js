@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { observer } from 'mobx-react';
 
 import store from './../../store/Store';
 
-class Home extends Component {
+@observer class Home extends Component {
 
     componentDidMount() {
-
+        store.getAvailableURLs();
     }
 
     render() {
@@ -18,7 +19,7 @@ class Home extends Component {
             return (
                 <div>
                     Loading...
-                </div>    
+                </div>
             )
         }
 
