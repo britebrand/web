@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter,
-  Route,
-  //Link
-} from 'react-router-dom'
+import { Route } from 'react-router-dom';
+import { observer } from 'mobx-react';
 
+//import store from './store/Store';
+
+import Header from './components/Header';
 import Home from './components/scenes/Home';
 
-class App extends Component {
+@observer class App extends Component {
 
   render() {
     return (
       <div>
-        <header />
-        <BrowserRouter>
-          <Route exact path="/" component={Home} />
-        </BrowserRouter>
+        <Header />
+        <Route exact path="/" component={Home} />
       </div>
     );
   }
