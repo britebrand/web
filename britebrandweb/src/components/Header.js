@@ -2,29 +2,38 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import Logo from './widgets/Logo';
+import SearchBar from './widgets/SearchBar';
+
+import header from './../assets/header.jpg';
 
 class Header extends Component {
 
     render() {
         return (
-            <header>
-                <div className="flex-row">
+            <header style={{backgroundImage: `url(${header})`}}>
+                <div className="flex-row header-top">
                     <Logo />
-                    <div>
-                        <Link to='/'>
+                    <div className="header-links">
+                        <Link 
+                            className="header-link"
+                            to='/'>
                             About
                         </Link>
-                        <Link to='/'>
+                        <Link 
+                            className="header-link"
+                            to='/'>
                             Blog
                         </Link>
-                        <Link to='/'>
+                        <Link 
+                            className="header-link"
+                            to='/'>
                             Cart
                         </Link>
                     </div>
                 </div>
-                <div>
-                    <h1> Find your next Brite idea. </h1>
-                    <input />
+                <div className="header-bottom">
+                    <h1 className="header-tagline"> Find your next Brite idea. </h1>
+                    <SearchBar />
                 </div>
             </header>
         )

@@ -1,6 +1,8 @@
 import { observable } from 'mobx';
-//import _ from 'lodash';
+import _ from 'lodash';
 import * as firebase from 'firebase';
+
+import Domain from './../models/Domain';
 
 /**
  * This class handles all api interactions and internal state 
@@ -28,11 +30,15 @@ class Store {
         firebase.initializeApp(config);
     }
 
-    getAvailableURLs() {
+    getAvailableDomains() {
         this.loading = true;
         return this.database.ref('/unsold').once('value').then(snapshot => {
-            console.log(snapshot.val())
-        }).finally(this.loading = false)
+            const vals = snapshot.val();
+            let availableURLs = [];
+            _.each(vals, (price, name) => availableURLs.push(new Domain(name, price)));
+            this.availableURLs = availableURLs;
+            this.loading = false;
+        })
     }
 
 }
