@@ -11,7 +11,7 @@ class Header extends Component {
     render() {
         return (
             <header style={{backgroundImage: `url(${header})`}}>
-                <div className="flex-row header-top">
+                <div className="max-width flex-row header-top">
                     <Logo />
                     <div className="header-links">
                         <Link 
@@ -31,7 +31,7 @@ class Header extends Component {
                         </Link>
                     </div>
                 </div>
-                <div className="header-bottom">
+                <div className="max-width header-bottom">
                     <h1 className="header-tagline"> Find your next Brite idea. </h1>
                     <SearchBar />
                 </div>

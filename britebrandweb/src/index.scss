@@ -41,10 +41,15 @@ p {
   align-items: center;
 }
 
+.max-width {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 /* Header */
 
 header {
-  height: 280px;
+  height: $header-height;
   width: 100%;
   background-color: $britebrand-blue;
   color: white;
@@ -87,4 +92,34 @@ header {
 
 .header-input::placeholder {
   color: #888D88;
+}
+
+/* Home */
+
+.loading-container {
+  height: calc(100vh - #{$header-height});
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.domains-container {
+  padding: 20px 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-gap: 20px;
+}
+
+.domain-container {
+  border: 1px solid;
+  height: 230px;
+  width: 100%;
+}
+
+@media screen and (min-width: 1440px) {
+
+  .domains-container {
+    padding: 20px 0px;
+  }
+
 }

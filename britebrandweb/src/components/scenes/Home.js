@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import _ from 'lodash';
+import { BeatLoader } from 'react-spinners';
 
 import store from './../../store/Store';
+
+import Domain from './../widgets/Domain';
 
 @observer class Home extends Component {
 
@@ -14,13 +17,15 @@ import store from './../../store/Store';
 
         const {
             loading,
-            availableURLs
+            availableDomains
         } = store;
 
         if (loading) {
             return (
-                <div>
-                    <h1> Loading... </h1>
+                <div className="loading-container">
+                    <BeatLoader 
+                        size={22}
+                        color="#305CC0"/>
                 </div>
             )
         }
@@ -28,7 +33,14 @@ import store from './../../store/Store';
         return (
             <div>
                 {
-                    availableURLs && _.map(availableURLs, each => <p style={{fontFamily: `${each.font}`}}key={each.name}> {each.displayName} </p>)
+                    availableDomains &&
+                    <div className="max-width domains-container">
+                        {_.map(availableDomains, domain => (
+                            <Domain
+                                key={domain.name}
+                                domain={domain} />)
+                        )}
+                    </div>
                 }
             </div>
         );

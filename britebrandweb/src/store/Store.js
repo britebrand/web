@@ -10,8 +10,7 @@ import Domain from './../models/Domain';
 class Store {
 
     @observable loading = false;
-    @observable availableURLs = null;
-    @observable selectedURLs = null;
+    @observable availableDomains = null;
 
     constructor(props) {
         this.initFirebase();
@@ -34,9 +33,9 @@ class Store {
         this.loading = true;
         return this.database.ref('/unsold').once('value').then(snapshot => {
             const vals = snapshot.val();
-            let availableURLs = [];
-            _.each(vals, (price, name) => availableURLs.push(new Domain(name, price)));
-            this.availableURLs = availableURLs;
+            let domains = [];
+            _.each(vals, (price, name) => domains.push(new Domain(name, price)));
+            this.availableDomains = domains;
             this.loading = false;
         })
     }
