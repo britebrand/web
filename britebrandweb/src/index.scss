@@ -177,3 +177,69 @@ header {
   }
 
 }
+
+@media screen and (max-width: 920px) {
+
+  header {
+    padding: 30px;
+  }
+
+  .domains-container {
+    padding: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  h1 {
+    font-size: 25px;
+  }
+  
+  h2 {
+    font-size: 22px;
+  }
+  
+  p {
+    font-size: 18px;
+  }
+  
+  header {
+    height: $header-height-mobile;
+  }
+
+  .logo-container {
+    width: 140px;
+  }
+
+  .header-input {
+    height: 40px;
+  }
+
+}
+
+
+@media screen and (max-width: 350px) {
+
+  h1 {
+    font-size: 20px;
+  }
+  
+  h2 {
+    font-size: 18px;
+  }
+  
+  p {
+    font-size: 16px;
+  }
+
+  .logo-container {
+    width: 120px;
+  }
+
+  .header-input {
+    height: 35px;
+  }
+
+}
