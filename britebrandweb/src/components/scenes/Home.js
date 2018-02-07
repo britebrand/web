@@ -17,15 +17,16 @@ import Domain from './../widgets/Domain';
 
         const {
             loading,
-            availableDomains
+            availableDomains,
+            selectedDomains
         } = store;
 
         if (loading) {
             return (
                 <div className="loading-container">
-                    <BeatLoader 
+                    <BeatLoader
                         size={22}
-                        color="#243C54"/>
+                        color="#243C54" />
                 </div>
             )
         }
@@ -35,10 +36,18 @@ import Domain from './../widgets/Domain';
                 {
                     availableDomains &&
                     <div className="max-width domains-container">
-                        {_.map(availableDomains, domain => (
-                            <Domain
-                                key={domain.name}
-                                domain={domain} />)
+                        {_.map(availableDomains, domain => {
+
+                            const toAdd = !_.includes(selectedDomains, domain);
+
+                            return (
+                                <Domain
+                                    key={domain.name}
+                                    toAdd={toAdd}
+                                    onAddOrRemove={() => toAdd ? store.selectDomain(domain) : store.removeDomain(domain)}
+                                    domain={domain} />
+                            )
+                        }
                         )}
                     </div>
                 }

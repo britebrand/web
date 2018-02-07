@@ -87,6 +87,10 @@ header {
   text-align: center;
 }
 
+.header-links {
+  position: relative;
+}
+
 .header-link {
   margin-left: 15px;
   font-size: 20px;
@@ -103,6 +107,18 @@ header {
 
 .header-input::placeholder {
   color: #888D88;
+}
+
+.counter {
+  background-color: $britebrand-red;
+  color: white;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  font-size: 12px;
+  top: -10px;
+  right: -15px;
 }
 
 /* Home */

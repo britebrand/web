@@ -4,7 +4,13 @@ import Button from './Button';
 import AddOrRemove from './AddOrRemove';
 
 const Domain = (props) => {
-    const { domain } = props;
+
+    const {
+        domain,
+        toAdd,
+        onAddOrRemove
+    } = props;
+
     return (
         <div className="domain-container flex-column">
             <div className="domain-name-container flex-center">
@@ -14,15 +20,17 @@ const Domain = (props) => {
                     key={domain.name}>
                     {domain.displayName}
                 </p>
-                <AddOrRemove isAdd/>
+                <AddOrRemove
+                    onClick={() => onAddOrRemove()}
+                    toAdd={toAdd} />
             </div>
             <div className="domain-price-container flex-row">
                 <p className="domain-price">
-                {`$${domain.price}`}
+                    {`$${domain.price}`}
                 </p>
-                <Button 
+                <Button
                     className="domain-buy-button"
-                    name="buy now"/>
+                    name="buy now" />
             </div>
         </div>
     );

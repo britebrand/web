@@ -1,4 +1,4 @@
-import { observable } from 'mobx';
+import { observable, computed } from 'mobx';
 import _ from 'lodash';
 import * as firebase from 'firebase';
 
@@ -11,10 +11,16 @@ class Store {
 
     @observable loading = false;
     @observable availableDomains = null;
+    @observable filteredAvailableDomains = null;
+    @observable selectedDomains = [];
 
     constructor(props) {
         this.initFirebase();
         this.database = firebase.database();
+    }
+
+    @computed get numSelectedDomains() {
+        return this.selectedDomains.length
     }
 
     initFirebase() {
@@ -38,6 +44,14 @@ class Store {
             this.availableDomains = domains;
             this.loading = false;
         })
+    }
+
+    selectDomain(domain) {
+        this.selectedDomains.push(domain)
+    }
+
+    removeDomain(domain) {
+        _.remove(this.selectedDomains, domain)
     }
 
 }
