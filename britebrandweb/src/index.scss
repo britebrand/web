@@ -16,6 +16,11 @@ a, a:visited {
   color: inherit;
 }
 
+button {
+  border: none;
+  cursor: pointer;
+}
+
 h1 {
   font-size: 30px;
   font-weight: normal;
@@ -41,6 +46,12 @@ p {
   align-items: center;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .max-width {
   max-width: 1440px;
   margin: 0 auto;
@@ -51,7 +62,7 @@ p {
 header {
   height: $header-height;
   width: 100%;
-  background-color: $britebrand-blue;
+  background-color: $britebrand-dark-blue;
   color: white;
   padding: 30px 50px;
   background-position: center;
@@ -104,16 +115,59 @@ header {
 }
 
 .domains-container {
-  padding: 20px 50px;
+  padding: 50px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   grid-gap: 20px;
 }
 
 .domain-container {
-  border: 1px solid;
   height: 230px;
   width: 100%;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+}
+
+.domain-name-container {
+  background-color: white;
+  height: calc(100% - 50px);
+  width: 100%;
+  position: relative;
+}
+
+.domain-name {
+  font-size: 25px;
+}
+
+.domain-price-container {
+  height: 50px;
+  padding: 10px;
+  background-color: $britebrand-gray;
+  justify-content: space-between;
+}
+
+.domain-buy-button {
+  color: white;
+  background-color: $britebrand-red;
+  width: 100px;
+  height: 30px;
+  font-size: 14px;
+}
+
+.domain-price {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.add-remove-button {
+  height: 26px;
+  width: 26px;
+  border-radius: 100%;
+  background-color: $britebrand-blue;
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
 }
 
 @media screen and (min-width: 1440px) {

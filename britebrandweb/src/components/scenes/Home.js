@@ -25,7 +25,7 @@ import Domain from './../widgets/Domain';
                 <div className="loading-container">
                     <BeatLoader 
                         size={22}
-                        color="#305CC0"/>
+                        color="#243C54"/>
                 </div>
             )
         }
