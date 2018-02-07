@@ -41,7 +41,7 @@ import header from './../assets/header.jpg';
                 </div>
                 <div className="max-width header-bottom">
                     <h1 className="header-tagline"> Find your next Brite idea. </h1>
-                    <SearchBar />
+                    <SearchBar onChange={(val) => setTimeout(100, store.searchDomain(val))} />
                 </div>
             </header>
         )

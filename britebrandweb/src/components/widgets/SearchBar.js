@@ -1,10 +1,10 @@
 import React from 'react';
 
-const SearchBar = () => (
+const SearchBar = (props) => (
     <input
         className="header-input"
         placeholder="Search..."
-        onChange={(e) => console.log('type')} />
+        onChange={(e) => props.onChange(e.target.value)} />
 );
 
 export default SearchBar;

@@ -11,7 +11,7 @@ class Store {
 
     @observable loading = false;
     @observable availableDomains = null;
-    @observable filteredAvailableDomains = null;
+    @observable searchedDomains = null;
     @observable selectedDomains = [];
 
     constructor(props) {
@@ -52,6 +52,14 @@ class Store {
 
     removeDomain(domain) {
         _.remove(this.selectedDomains, domain)
+    }
+
+    searchDomain(term) {
+        if (term === '') {
+            this.searchedDomains = null;
+            return;
+        }
+        this.searchedDomains = _.filter(this.availableDomains, domain => domain.displayName.includes(term))
     }
 
 }
