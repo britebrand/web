@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import { observer } from 'mobx-react';
 
 //import store from './store/Store';
 
 import Header from './components/Header';
 import Home from './components/scenes/Home';
+import About from './components/scenes/About';
+import Cart from './components/scenes/Cart';
 
 @observer class App extends Component {
 
@@ -13,10 +15,14 @@ import Home from './components/scenes/Home';
     return (
       <div>
         <Header />
-        <Route exact path="/" component={Home} />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/cart" component={Cart} />
+        </Switch>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

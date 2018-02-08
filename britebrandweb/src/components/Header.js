@@ -23,7 +23,7 @@ import header from './../assets/header.jpg';
                     <div className="header-links">
                         <Link
                             className="header-link"
-                            to='/'>
+                            to='/about'>
                             About
                         </Link>
                         <Link
@@ -33,7 +33,7 @@ import header from './../assets/header.jpg';
                         </Link>
                         <Link
                             className="header-link"
-                            to='/'>
+                            to='/cart'>
                             Cart
                         </Link>
                         <Counter count={numSelectedDomains} />
