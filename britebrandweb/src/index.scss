@@ -103,6 +103,7 @@ header {
   font-size: 22px;
   padding-left: 15px;
   font-family: inherit;
+  border-radius: 0px;
 }
 
 .header-input::placeholder {
@@ -177,14 +178,14 @@ header {
 .add-remove-button {
   height: 26px;
   width: 26px;
-  border-radius: 100%;
+  border-radius: 50%;
   background-color: $britebrand-blue;
   color: white;
   position: absolute;
   top: 10px;
   right: 10px;
   font-size: 20px;
-  line-height: 100%;
+  line-height: 20px;
 }
 
 @media screen and (min-width: 1440px) {
@@ -203,7 +204,7 @@ header {
 
   .domains-container {
     padding: 30px;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
 
 }
@@ -234,6 +235,11 @@ header {
     height: 40px;
   }
 
+  .domains-container {
+    padding: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
 }
 
 
@@ -257,6 +263,10 @@ header {
 
   .header-input {
     height: 35px;
+  }
+
+  .header-link {
+    font-size: 16px;
   }
 
 }
