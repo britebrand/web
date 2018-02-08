@@ -23,6 +23,12 @@ class Store {
         return this.selectedDomains.length
     }
 
+    @computed get totalPrice() {
+        let price = 0;
+        _.each(this.selectedDomains, each => price += each.price)
+        return price
+    }
+
     initFirebase() {
         const config = {
             apiKey: "AIzaSyBbcrMDYfGVpG2EXN1BlCE1ranTs5twKAQ",

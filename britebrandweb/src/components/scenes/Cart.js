@@ -8,11 +8,22 @@ import store from './../../store/Store';
 
     render() {
 
-        const { selectedDomains } = store;
+        const {
+            selectedDomains,
+            numSelectedDomains,
+            totalPrice
+        } = store;
 
         return (
-            <div>
-                <h1> Cart </h1>
+            <div className="max-width body-container">
+                {
+                    numSelectedDomains > 0 ?
+                        <div>
+                            {_.map(selectedDomains, each => <p> {each.displayName} </p>)}
+                            {totalPrice}
+                        </div> :
+                        <h1> No domains added to cart yet. </h1>
+                }
             </div>
         );
     }
