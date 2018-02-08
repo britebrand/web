@@ -122,6 +122,10 @@ header {
   right: -15px;
 }
 
+.body-container {
+  padding: 50px;
+}
+
 /* Home */
 
 .loading-container {
@@ -132,7 +136,6 @@ header {
 }
 
 .domains-container {
-  padding: 50px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   grid-gap: 20px;
@@ -188,23 +191,43 @@ header {
   line-height: 20px;
 }
 
+/* About */
+
+.about-section-container {
+ margin-bottom: 50px;
+}
+
+.about-section-title {
+  font-weight: bold;
+}
+
+.about-section-body {
+  font-weight: normal;
+  margin-left: 50px;
+}
+
+/* Cart */
+
 @media screen and (min-width: 1440px) {
 
-  .domains-container {
-    padding: 20px 0px;
+  .body-container {
+    box-sizing: content-box;
   }
 
 }
 
 @media screen and (max-width: 920px) {
 
-  header {
+  header, .body-container {
     padding: 30px;
   }
 
   .domains-container {
-    padding: 30px;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  .about-section-body {
+    margin-left: 0;
   }
 
 }

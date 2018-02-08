@@ -38,7 +38,7 @@ import Domain from './../widgets/Domain';
             <div>
                 {
                     domains &&
-                    <div className="max-width domains-container">
+                    <div className="max-width body-container domains-container">
                         {_.map(domains, domain => {
 
                             const toAdd = !_.includes(selectedDomains, domain);
