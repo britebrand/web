@@ -4,13 +4,14 @@ const AddOrRemove = (props) => {
 
     const {
         onClick,
-        toAdd
+        toAdd,
+        className
     } = props;
 
     return (
         <button
             onClick={() => onClick && onClick()}
-            className="add-remove-button">
+            className={`add-remove-button ${className}`}>
             {toAdd ? '+' : '-'}
         </button>
     );

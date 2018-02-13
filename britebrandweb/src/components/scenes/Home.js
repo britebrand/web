@@ -18,7 +18,6 @@ import Domain from './../widgets/Domain';
         const {
             loading,
             availableDomains,
-            selectedDomains,
             searchedDomains
         } = store;
 
@@ -41,7 +40,7 @@ import Domain from './../widgets/Domain';
                     <div className="max-width body-container domains-container">
                         {_.map(domains, domain => {
 
-                            const toAdd = !_.includes(selectedDomains, domain);
+                            const toAdd = store.toAdd(domain);
 
                             return (
                                 <Domain

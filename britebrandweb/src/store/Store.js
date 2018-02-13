@@ -29,6 +29,10 @@ class Store {
         return price
     }
 
+    toAdd(domain) {
+        return !_.includes(this.selectedDomains, domain)
+    }
+
     initFirebase() {
         const config = {
             apiKey: "AIzaSyBbcrMDYfGVpG2EXN1BlCE1ranTs5twKAQ",
