@@ -24,7 +24,9 @@ class About extends Component {
             <div className="max-width body-container">
                 {
                     _.map(ABOUT_SECTIONS, each => (
-                        <div className="about-section-container">
+                        <div 
+                            key={each.title}
+                            className="about-section-container">
                             <h1 className="about-section-title"> {each.title} </h1>
                             <p 
                                 className="about-section-body"

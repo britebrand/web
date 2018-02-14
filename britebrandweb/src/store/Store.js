@@ -46,6 +46,7 @@ class Store {
     }
 
     getAvailableDomains() {
+        if (this.availableDomains) return;
         this.loading = true;
         return this.database.ref('/unsold').once('value').then(snapshot => {
             const vals = snapshot.val();
