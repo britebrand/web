@@ -37,7 +37,8 @@ import header from './../assets/header.jpg';
 
         return (
             <header style={{ backgroundImage: `url(${header})` }}>
-                <div className={`max-width flex-row header-top ${this.addShadow ? 'with-shadow' : ''}`}>
+                <div className={`header-top ${this.addShadow ? 'with-shadow' : ''}`}>
+                <div className="max-width flex-row header-top-container">
                     <Logo />
                     <div className="header-links">
                         <Link
@@ -56,6 +57,7 @@ import header from './../assets/header.jpg';
                             Cart
                         </Link>
                         <Counter count={numSelectedDomains} />
+                    </div>
                     </div>
                 </div>
                 {

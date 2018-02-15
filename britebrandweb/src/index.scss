@@ -79,14 +79,17 @@ header {
 }
 
 .header-top {
-  justify-content: space-between;
-  padding: 20px 50px 20px 50px;
   background-color: $background-color;
   color: $britebrand-black;
   position: fixed;
   width: 100%;
   z-index: 999;
   top: 0;
+}
+
+.header-top-container {
+  justify-content: space-between;
+  padding: 20px 50px 20px 50px;
 }
 
 .header-top.with-shadow {
