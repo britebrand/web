@@ -12,9 +12,12 @@ import Cart from './components/scenes/Cart';
 @observer class App extends Component {
 
   render() {
+
+    const { pathname } = this.props.location;
+
     return (
       <div>
-        <Header />
+        <Header showSearchBar={pathname === '/'} />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/about" component={About} />

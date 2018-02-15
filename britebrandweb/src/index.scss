@@ -6,6 +6,7 @@
 
 body {
   margin: 0;
+  margin-top: 100px;
   padding: 0;
   font-family: $main-font;
   background-color: $background-color;
@@ -60,11 +61,9 @@ p {
 /* Header */
 
 header {
-  height: $header-height;
   width: 100%;
   background-color: $britebrand-dark-blue;
   color: white;
-  padding: 30px 50px;
   background-position: center;
   background-size: cover;
 }
@@ -81,6 +80,22 @@ header {
 
 .header-top {
   justify-content: space-between;
+  padding: 20px 50px 20px 50px;
+  background-color: $background-color;
+  color: $britebrand-black;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  top: 0;
+}
+
+.header-top.with-shadow {
+  box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+}
+
+
+.header-bottom {
+  padding: 10px 50px 40px 50px;
 }
 
 .header-tagline {
@@ -129,7 +144,7 @@ header {
 /* Home */
 
 .loading-container {
-  height: calc(100vh - #{$header-height});
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -266,7 +281,7 @@ header {
 
 @media screen and (max-width: 920px) {
 
-  header, .body-container {
+  .body-container {
     padding: 30px;
   }
 
@@ -290,6 +305,10 @@ header {
 
 @media screen and (max-width: 600px) {
 
+  body {
+    margin-top: 80px;
+  }
+
   h1 {
     font-size: 25px;
   }
@@ -301,9 +320,17 @@ header {
   p {
     font-size: 18px;
   }
+
+  .header-top {
+    padding: 20px 30px 20px 30px;
+  }
   
-  header {
-    height: $header-height-mobile;
+  .header-bottom {
+    padding: 10px 30px 40px 30px;
+  }
+
+  .header-link {
+    font-size: 16px;
   }
 
   .logo-container {
@@ -354,10 +381,6 @@ header {
 
   .header-input {
     height: 35px;
-  }
-
-  .header-link {
-    font-size: 16px;
   }
 
 }
